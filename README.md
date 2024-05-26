@@ -6,9 +6,7 @@ BookStop-Marketplace is a Django-based web application designed to facilitate bu
 
 - **User Authentication**: Users can create accounts, log in, and log out securely.
 - **Book Listings**: Users can list books they want to sell, specifying details such as title, author, condition, and price.
-- **Search and Filter**: Users can search for specific books or filter listings based on criteria like title, author, or price range.
 - **Book Details**: Detailed information about each book listing, including images, description, and seller information.
-- **Messaging System**: Users can communicate with sellers through an integrated messaging system to discuss details and arrange transactions.
 - **User Profiles**: Each user has a profile page where they can manage their listings, view messages, and update their information.
 - **Admin Panel**: Admins have access to a powerful admin panel to manage users, listings, and reported content.
 - **Responsive Design**: The website is designed to be mobile-friendly, ensuring a seamless experience across devices.
