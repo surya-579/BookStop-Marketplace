@@ -1,0 +1,55 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block css %}<link rel="stylesheet" href="{% static 'app/css/productdetail.css' %}">{% endblock css %}
+{% block title %}{{ product.title }}{% endblock title %}
+{% block main-content %}
+<div class="card Pcard">
+  <div class="row">
+    <div class="col">
+      <div class="more-img-sec" id='sec-sc'>
+        <img src="{{ product.product_img.url }}" onclick="changeImage(this)" class="img-s skeleton" alt="{{ product.title }}">
+        <img src="{{ product.product_imag.url }}" onclick="changeImage(this)" class="img-s skeleton" alt="{{ product.title }}">
+        <img src="{{ product.product_image.url }}" onclick="changeImage(this)" class="img-s skeleton" alt="{{ product.title }}">
+        <img src="{{ product.product_images.url }}" onclick="changeImage(this)" class="img-s skeleton" alt="{{ product.title }}">
+      </div>
+      <img src="{{ product.product_image.url }}" class="img-fluid rounded-start skeleton" id="main" alt="{{ product.title }}">
+    </div>
+    <div class="col-md-8">
+      <div class="Pcard-body">
+        <h5 class="Pcard-title">{{ product.title }}</h5>
+        <p class="description">{{ product.description }}</p>
+        <p class="Pcard-price"> {{ product.discount_price }}Rs
+          <span class="discount"> {{ product.selling_price }}Rs</span>
+        </p>
+        
+        <!-- Additional Product Details -->
+        
+        <!-- User Details -->
+        <div class="user-details">
+          <h6>User Details</h6>
+          <p><strong>Name:</strong> {{ customer.name }}</p>
+          <p><strong>Roll Number:</strong> {{ customer.rollNumber }}</p>
+          <p><strong>Branch:</strong> {{ customer.branch }}</p>
+          <p><strong>Phone Number:</strong> {{ customer.phoneNumber }}</p>
+        </div>
+
+        <script type="text/javascript">
+          const cat = "{{ product.category }}"
+          if (cat == "SH") {
+            document.getElementById("size.id_shirt").style.display = "none";
+            document.getElementById("size.id_watches").style.display = "none";
+          }
+          if (cat == "TW") {
+            document.getElementById("size.id_shoes").style.display = "none";
+            document.getElementById("size.id_watches").style.display = "none";
+          }
+          if (cat == "W") {
+            document.getElementById("size.id_shoes").style.display = "none";
+            document.getElementById("size.id_shirt").style.display = "none";
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}
